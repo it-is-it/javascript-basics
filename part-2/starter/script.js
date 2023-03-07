@@ -127,3 +127,78 @@ scoreDolphins=calcaverage(85,54,41);
 scoreKoalas=calcaverage(23,34,27);
 console.log(scoreDolphins,scoreKoalas);
 checkwinner(scoreDolphins,scoreKoalas);
+
+
+
+
+// Array
+const freind1 = 'Micheal';
+const freind2 = 'Steven';
+const freind3 = 'Peter';
+
+const friends =['Micheal','Steven','Peter'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[1]);
+
+console.log(friends.length);
+console.log(friends[friends.length-1]);
+
+friends[2] = 'jay';
+console.log(friends);
+// friends =['Bob', 'alita'];      this doesn't work
+
+const firstname ='jonas';
+const jonas =[firstname, 'schmedtman', 2037-1991, 'teacher', friends];
+console.log(jonas);
+console.log(jonas.length);
+
+//exercise
+const calAge = function (birthY){
+    return 2037-birthY;
+}
+const y =[1990, 1967, 2002, 2010, 2018];
+
+const age10 =calAge(y[0]);
+const age11 =calAge(y[1]);
+const age12 =calAge(y[2]);
+console.log (age10, age11, age12 );
+
+const ages = [calAge(y[0]),calAge(y[1]),calAge(y[2])];
+console.log(ages);
+
+
+// add elements in the array
+const frinds =['Micheal','steven','Peter'];
+const newlen= frinds.push ('jay');
+console.log(frinds);
+console.log(newlen);
+
+frinds.unshift('john');
+console.log(frinds);
+
+
+// remove elements in the array
+frinds.pop();
+const popped = frinds.pop();
+console.log(popped);
+console.log(frinds);
+
+frinds.shift();
+console.log(frinds);
+
+console.log(frinds.indexOf('steven'));
+console.log(frinds.indexOf('bob'));
+
+
+frinds.push(23);
+console.log(frinds.includes('bob'));
+console.log(frinds.includes('steven'));
+console.log(frinds.includes(23));
+
+if(frinds.includes('steven')){
+    console.log('You have a friend named steven');
+}
