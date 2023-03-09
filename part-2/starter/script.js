@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 let hasDriverLisense = false;
 const passTest = true;
 
@@ -201,4 +202,148 @@ console.log(frinds.includes(23));
 
 if(frinds.includes('steven')){
     console.log('You have a friend named steven');
+}
+
+
+// coding challenges #2
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15: bill * 0.2;
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+
+const thomasArray = [
+  'Thomas',
+  'Shelby',
+  1980 - 1920,
+  'Businessman',
+  ['Micheal', 'Walter', 'Jessie'],
+];
+
+// creating objects
+const Thomas = {
+  firstName: 'Thomas',
+  lastName: 'Shelby',
+  age: 1980 - 1920,
+  job: 'Businessman',
+  friends: ['Micheal', 'Walter', 'Jessie'],
+};
+
+console.log(Thomas);
+console.log(Thomas.lastName);
+console.log(Thomas['lastName']);
+
+const namekey = 'Name';
+console.log(Thomas['first' + namekey]);
+console.log(Thomas['last' + namekey]);
+
+// console.log(Thomas.'last' + namekey);
+const instrestedIn = prompt(
+  'What do you want to know about Thomas? Choose between firstName, lastName, age, job and friends'
+);
+
+if (Thomas[instrestedIn]) {
+  console.log(Thomas[instrestedIn]);
+} else {
+  console.log(
+    'Wrong request! Choose between firstName, lastName, age, job and friends'
+  );
+}
+
+Thomas.location = 'England';
+Thomas['twitter'] = '@thomaspeakyblinders';
+console.log(Thomas);
+
+// challenge
+// thomas has 3 friends and his best friend is Micheal
+
+console.log(
+  `${Thomas.firstName} has ${Thomas.friends.length} friends: ${Thomas.friends} and his best friend is ${Thomas.friends[0]}.`
+);
+
+const Thomas = {
+  firstName: 'Thomas',
+  lastName: 'Shelby',
+  birthyear: 1920,
+  job: 'Businessman',
+  friends: ['Micheal', 'Walter', 'Jessie'],
+  hasDriverLisense: true,
+  //   calcAge: function (birthyear) {
+  //     return 1980 - birthyear;
+  //   },
+  calcAge: function () {
+    this.age = 1980 - this.birthyear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-years old ${
+      Thomas.job
+    }, and he has ${this.hasDriverLisense ? 'a' : 'no'} driver's lisense.`;
+  },
+  //   calcAge: function () {
+  //     // console.log(this);
+  //     return 1980 - this.birthyear;
+  //   },
+};
+
+console.log(Thomas.calcAge());
+
+console.log(Thomas.age);
+console.log(Thomas.age);
+console.log(Thomas.age);
+
+// console.log(Thomas['calcAge'](1920));
+
+// challenge
+// Thomas is a 60 years old businessman, and he has a driver's lisence
+console.log(Thomas.getSummary());
+*/
+
+//coding challenge
+
+const john = {
+  firstName: 'John',
+  lastName: 'Cena',
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+const mark = {
+  firstName: 'Mark',
+  lastName: 'Henry',
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+if (john.calcBMI() > mark.calcBMI()) {
+  console.log(
+    `${john.firstName} ${
+      john.lastName
+    }'s BMI (${john.calcBMI()}) is heigher than ${mark.firstName} ${
+      mark.lastName
+    }'s BMI (${mark.calcBMI()})`
+  );
+} else {
+  console.log(
+    `${mark.firstName} ${
+      mark.lastName
+    }'s BMI (${mark.calcBMI()}) is heigher than ${john.firstName} ${
+      john.lastName
+    }'s BMI (${john.calcBMI()})`
+  );
 }
