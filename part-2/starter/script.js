@@ -304,7 +304,7 @@ console.log(Thomas.age);
 // challenge
 // Thomas is a 60 years old businessman, and he has a driver's lisence
 console.log(Thomas.getSummary());
-*/
+
 
 //coding challenge
 
@@ -336,7 +336,7 @@ if (john.calcBMI() > mark.calcBMI()) {
       john.lastName
     }'s BMI (${john.calcBMI()}) is heigher than ${mark.firstName} ${
       mark.lastName
-    }'s BMI (${mark.calcBMI()})`
+    }'s BMI (${mark.calcBMI()}). `
   );
 } else {
   console.log(
@@ -344,6 +344,135 @@ if (john.calcBMI() > mark.calcBMI()) {
       mark.lastName
     }'s BMI (${mark.calcBMI()}) is heigher than ${john.firstName} ${
       john.lastName
-    }'s BMI (${john.calcBMI()})`
+    }'s BMI (${john.calcBMI()}). `
   );
 }
+
+
+// loops practice
+
+// console.log('Lifting weights repetation 1');
+// console.log('Lifting weights repetation 2');
+// console.log('Lifting weights repetation 3');
+
+// for loops is keep running while the condition is true
+for (let rep = 1; rep <= 30; rep++) {
+  console.log(`Lifting weights repetation ${rep} 😎`);
+}
+
+const thomas = [
+  'Thomas',
+  'Shelby',
+  1980 - 1920,
+  'Businessman',
+  ['Micheal', 'Walter', 'Jessie'],
+  true,
+];
+
+const types = [];
+for (let i = 0; i < thomas.length; i++) {
+  //reading from the thomas array
+  console.log(thomas[i], typeof thomas[i]);
+
+  //filling types array
+  //   types[i] = typeof thomas[i];
+  types.push(typeof thomas[i]);
+}
+
+console.log(types);
+
+const years = [1920, 1945, 1963, 1980];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2012 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log(`----only strings-----------`);
+for (let i = 0; i < thomas.length; i++) {
+  if (typeof thomas[i] !== 'string') {
+    continue;
+  }
+  console.log(thomas[i], typeof thomas[i]);
+}
+
+console.log(`-------Break with Number--------`);
+for (let i = 0; i < thomas.length; i++) {
+  if (typeof thomas[i] === 'number') {
+    break;
+  }
+  console.log(thomas[i], typeof thomas[i]);
+}
+
+const thomas = [
+  'Thomas',
+  'Shelby',
+  1980 - 1920,
+  'Businessman',
+  ['Micheal', 'Walter', 'Jessie'],
+  true,
+];
+
+for (let i = thomas.length - 1; i >= 0; i--) {
+  console.log(i, thomas[i], typeof thomas[i]);
+}
+
+//nested loops
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`----strating exercise ${exercise} 👾---`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 💪`);
+  }
+}
+
+//while loop
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetation ${rep} 😎`);
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`lifting weights repetation ${rep} 🏋️‍♀️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log('Loop is about to end....');
+}
+*/
+
+// coding challenges #4
+const value = [];
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+console.log(bills, tips, totals);
+
+const calcaverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+console.log(calcaverage([2, 3, 7]));
+console.log(calcaverage(bills)); //average bills
+console.log(calcaverage(tips)); //average tips
+console.log(calcaverage(totals)); //average totals
