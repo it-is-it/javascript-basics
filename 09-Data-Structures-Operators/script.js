@@ -1,7 +1,5 @@
 'use strict';
 
-/*
-
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -53,6 +51,15 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+for (const item of menu.entries()) {
+  console.log(`${item}`);
+}
+
+// console.log([...menu.entries()]);
+
+/*
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -72,7 +79,6 @@ Suppose we get data from a web service about a certain game (below). In this cha
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
 GOOD LUCK 😀
-*/
 
 const game = {
   team1: 'Bayern Munich',
@@ -152,7 +158,6 @@ printGoals(...game.scored);
 team1 < team2 && console.log('Team1 is more likely to win')
 team1 > team2 && console.log('Team2 is more likely to win')
 
-/*
 
 const rest1 ={
   name: 'Capri',
