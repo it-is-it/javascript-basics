@@ -664,3 +664,55 @@ const dogs = [
 ]
 
   // 1
+  dogs.forEach(dog => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+  console.log(dogs);
+
+  // 2
+  const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+  console.log(dogSarah);
+  console.log(
+    `Sarah's dog is eating too ${
+      dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'
+    }`
+  );
+
+  // 3
+  const ownersEatTooMuch = dogs
+    .filter(dog => dog.curFood > dog.recFood)
+    .flatMap(dog => dog.owners);
+
+  console.log(ownersEatTooMuch);
+
+  const ownersEatTooLittle = dogs
+    .filter(dog => dog.curFood < dog.recFood)
+    .flatMap(dog => dog.owners);
+
+  console.log(ownersEatTooLittle);
+
+  // 4
+  console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+  console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+
+  // 5
+  const exactlyFood = dogs.some(dog => dog.curFood === dog.recFood);
+  console.log(exactlyFood);
+
+  // 6
+
+  const checkEating = dog =>
+    dog.curFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+
+  console.log(dogs.some(checkEating));
+
+  //7
+  console.log(dogs.filter(checkEating));
+
+  // 8
+  // const shallowArray = dogs
+  //   .filter(dog => dog.recFood)
+  //   .flatMap(dog => dog.recFood)
+  //   .sort();
+  // console.log(shallowArray);
+
+  const dogSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+  console.log(dogSorted);
