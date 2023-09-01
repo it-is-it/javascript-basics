@@ -584,7 +584,6 @@ console.log(y);
 const z = Array.from({ length: 7 }, (_, i) => i + 1);
 console.log(z);
 
-*/
 
 labelBalance.addEventListener('click', function () {
   const movementsUI = Array.from(
@@ -596,3 +595,72 @@ labelBalance.addEventListener('click', function () {
 
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 });
+
+
+
+//Array method practice
+
+
+// 1.
+const bankDepositSum = accounts
+.flatMap(acc => acc.movements)
+.filter(mov => mov > 0)
+.reduce((sum, cur) => sum + cur , 0);
+
+console.log(bankDepositSum);
+
+
+// 2.
+const numDeposits1000 = accounts
+.flatMap( acc => acc.movements)
+.reduce((count , cur) => cur>= 1000 ? ++ count : count , 0)
+
+console.log(numDeposits1000);
+
+// 3.
+const sums =accounts
+.flatMap(acc => acc.movements)
+.reduce((sums ,cur) => {
+  // cur > 0 ? (sums.deposits += cur) : (sums.withdrawls += cur); 
+  sums[cur > 0 ? 'deposits' : 'withdrawls'] += cur;
+  return sums;},{deposits:0 , withdrawls: 0})
+
+console.log(sums);
+
+// 4.
+// this is a nice title -> This Is a Nice Title
+
+const convertTitleCase = function (title) {
+
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a' , 'an', 'the', 'and','but','or','on','in','with'];
+
+  const titleCase = title
+  .toLowerCase()
+  .split(' ')
+  .map(word => 
+    exceptions.includes (word) ? word : word[0].
+    toUpperCase() + word.slice(1))
+    .join(' ');
+  return capitalize(titleCase);
+
+};
+
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+
+*/
+
+
+//final coding challenge
+
+const dogs = [
+  {weight: 23, curFood: 250, owners: ['Alice','Bob']},
+  {weight: 8, curFood: 200, owners: ['Matilda']},
+  {weight: 13, curFood: 275, owners: ['Sarah','john']},
+  {weight: 32, curFood: 340, owners: ['Michael']},
+]
+
+  // 1
