@@ -4,7 +4,7 @@ const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
-/*
+// /*
 
 const getCountryData = function (country) {
   const request = new XMLHttpRequest();
@@ -15,6 +15,14 @@ const getCountryData = function (country) {
     const [data] = JSON.parse(this.responseText);
     console.log(data);
 
+    const getFirstAvailableLanguageCode = function (languages) {
+      for (const languageCode in languages) {
+        if (languages.hasOwnProperty(languageCode)) {
+          return languageCode;
+        }
+      }
+    };
+
     const html = `
   <article class="country">
     <img class="country__img" src="${data.flags.svg}" />
@@ -24,7 +32,9 @@ const getCountryData = function (country) {
       <p class="country__row"><span>👫</span>${(
         +data.population / 1000000
       ).toFixed(1)} people</p>
-      <p class="country__row"><span>🗣️</span>${data.languages.deu}</p>
+      <p class="country__row"><span>🗣️</span>${getFirstAvailableLanguageCode(
+        data.languages
+      )}</p>
         <p class="country__row"><span>💰</span>${data.currencies.EUR.name}</p>
     </div>
   </article>
@@ -38,7 +48,7 @@ getCountryData('france');
 getCountryData('germany');
 getCountryData('spain');
 
-*/
+// */
 
 /*
 
@@ -116,11 +126,10 @@ setTimeout(() => {
 }, 1000);
 */
 
-
-const getCountryData = function(country){
-    fetch(`https://restcountries.com/v3.1/name/${country}`).then(function (response){
-        console.log(response);
-       return response.json()
-    })
-}
-getCountryData('germany')
+// const getCountryData = function(country){
+//     fetch(`https://restcountries.com/v3.1/name/${country}`).then(function (response){
+//         console.log(response);
+//        return response.json()
+//     })
+// }
+// getCountryData('germany')
