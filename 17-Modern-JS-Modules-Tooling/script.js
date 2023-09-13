@@ -1,9 +1,6 @@
 //Importing module
-/*
-// import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
-console.log('Importing module');
-// // console.log(shippingCost);
+// import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
 // addToCart('bread', 5);
 // console.log(price, tq);
@@ -28,6 +25,7 @@ console.log(cart);
 // console.log(data);
 // console.log('something');
 
+/*
 const getLastPost = async function () {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const data = await res.json();
@@ -84,3 +82,37 @@ console.log(shoppingCart2.shippingCost);
 //       `${quantity} ${product} added to cart (shipping cost is ${shippingCost})`
 //     );
 //   };
+
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep, { xorWith } from 'lodash-es';
+// import cloneDeep from 'lodash'; not working for me
+
+const state = {
+  cart: [
+    { product: 'bread', quantity: 5 },
+    { product: 'pizza', quantity: 5 },
+  ],
+  user: { loggedIn: true },
+};
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.loggedIn = false;
+console.log(stateClone);
+console.log(stateDeepClone);
+
+if(module.hot){
+  module.hot.accept()
+}
+
+console.log('Jonas' ?? null);
+
+console.log(cart.find(el => el.quantity >=2));
+Promise.resolve('TEST').then(x=> console.log(x))
+
+import 'core-js/stable';
+// import 'core-js/stable/array/find';
+// import 'core-js/stable/Promise';
+
+//Polifilling async functions
+import 'regenerator-runtime/runtime'
