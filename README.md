@@ -11,6 +11,6 @@ All the projects done in the netlify app are here
 - [Bankist](https://bankist.netlify.app/) (Arrays, Numbers, Dates, Timers. Fake "log in" with user `js` and PIN `1111`)
 - [Bankist Site](https://bankist-dom.netlify.app/) (Advanced DOM and Events)
 - [Mapty](https://mapty.netlify.app/) (OOP, Geolocation, Project planning)
-- [forkify](https://forkify-v2.netlify.app/) (Final advanced project)
+- [forkify](https://forkify-it-is-it.netlify.app/#6504012d3da6600014c143e5) (Final advanced project)
 
 # Happy Learning
